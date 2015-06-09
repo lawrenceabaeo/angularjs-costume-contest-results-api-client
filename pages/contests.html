@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title" ng-show="oneContest.$resolved">
+          {{ oneContest.contest.name }} |
+          {{ convertToDate(oneContest.contest.contest_occurrence) | date: 'MMMM d, yyyy' }}
+        </h2>
+      </div>
+      <div class="panel-body">
+        <div ng-hide="oneContest.$resolved">Loading...</div>
+        {{ oneContest.contest.location }}<br>
+        {{ oneContest.contest.description }}<br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Results:</h3>
+<div ng-hide="oneContest.$resolved">Loading...</div>
+<div ng-repeat="category in oneContest.contest.categories">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">{{ category.category_description.name }}</h2>
+        </div>
+        <div class="panel-body">
+          {{ category.category_description.description }}<br>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="entry in category.entries">
+            {{ entry.title }}</br>
+            {{ entry.character }}</br>
+            by {{ entry.person }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
