@@ -1,4 +1,3 @@
-# angularjs-costume-contest-results-api-client
-An AngularJS web client that consumes a REST API for costume contest results
+# Click the Github Pages link below for more info!
 
-Link to working client coming soon...
+[http://lawrenceabaeo.github.io/angularjs-costume-contest-results-api-client/](http://lawrenceabaeo.github.io/angularjs-costume-contest-results-api-client/)
