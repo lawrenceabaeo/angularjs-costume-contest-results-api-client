@@ -43,7 +43,6 @@ myApp.controller('ContestsController',
     ['$scope', '$routeParams', 'contestURLService', 
       function($scope, $routeParams, contestURLService) {
         $scope.contestId = $routeParams.id || '0';
-        $scope.sayIt = "hoowah!";
         $scope.oneContest = contestURLService.GetOneContest($scope.contestId);
         $scope.convertToDate = function(dt) {
           return new Date(dt);
