@@ -8,7 +8,7 @@
         </h2>
       </div>
       <div class="panel-body">
-        <div ng-hide="oneContest.$resolved">Loading...</div>
+        <div ng-hide="oneContest.$resolved" class="loading-area spinner">Loading...</div>
         {{ oneContest.contest.location }}<br>
         {{ oneContest.contest.description }}<br>
       </div>
@@ -17,7 +17,7 @@
 </div>
 
 <h3>Results:</h3>
-<div ng-hide="oneContest.$resolved">Loading...</div>
+<div ng-hide="oneContest.$resolved" class="loading-area spinner">Loading...</div>
 <div ng-repeat="category in oneContest.contest.categories">
   <div class="row">
     <div class="col-md-12">
