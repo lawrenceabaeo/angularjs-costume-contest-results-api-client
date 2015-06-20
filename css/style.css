@@ -53,40 +53,77 @@
 
 .one-row.ng-enter-stagger{
   animation-delay: .075s;
+  -webkit-animation-delay: .075s;
 }
 
 .one-row.ng-enter{
   animation-name: flip-down;
   animation-duration: .3s;
   animation-timing-function: ease;
+  -webkit-animation-name: flip-down;
+  -webkit-animation-duration: .3s;
+  -webkit-animation-timing-function: ease;
 }
 
 .cat.ng-enter-stagger {
   animation-delay: 2s;
+  -webkit-animation-delay: 2s;
 }
 
 .results-header, .one-contest-description, .cat {
   animation-name: fade-in;
   animation-duration: 1s;
   animation-timing-function: ease;
+  -webkit-animation-name: fade-in;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
 }
 
+@-webkit-keyframes flip-down {
+  0% {
+    -webkit-transform: perspective( 350px ) rotateX( -90deg);
+    transform: perspective( 350px ) rotateX( -90deg);
+      }
+  100% {
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective( 350px ) rotateX( 0deg );
+    transform: perspective( 350px ) rotateX( 0deg );
+  }
+}
 
 @keyframes flip-down {
   0% {
+    -webkit-transform: perspective( 350px ) rotateX( -90deg);
     transform: perspective( 350px ) rotateX( -90deg);
   }
   100% {
+    -webkit-transform-origin: 50% 0%;
     transform-origin: 50% 0%;
+    -webkit-transform: perspective( 350px ) rotateX( 0deg );
     transform: perspective( 350px ) rotateX( 0deg );
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100$ {
+    opacity: 1;
+    filter: alpha(opacity=100);
   }
 }
 
 @keyframes fade-in {
   0% {
     opacity: 0;
-  }
+    filter: alpha(opacity=0);
+}
   100$ {
     opacity: 1;
+    filter: alpha(opacity=100);
   }
 }
+
