@@ -1,7 +1,6 @@
 <h2>Latest Contests:</h2>
 <div ng-hide="fullList.$resolved" class="loading-area spinner">Loading...</div>
-<div ng-repeat="contest in fullList.contests">
-  <div class="row">
+<div class="row one-row" ng-repeat="contest in fullList.contests">
     <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -18,4 +17,3 @@
       </div>
     </div>
   </div>
-</div>

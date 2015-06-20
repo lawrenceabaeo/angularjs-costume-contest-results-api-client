@@ -36,8 +36,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 16px;
-  height: 16px;
+  width: 60px;
+  height: 60px;
   margin-top: -10px;
   margin-left: -10px;
 }
@@ -49,4 +49,44 @@
   border-top-color: rgba(0, 0, 0, .6);
   animation: spinner .6s linear infinite;
   -webkit-animation: spinner .6s linear infinite;
+}
+
+.one-row.ng-enter-stagger{
+  animation-delay: .075s;
+}
+
+.one-row.ng-enter{
+  animation-name: flip-down;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+}
+
+.cat.ng-enter-stagger {
+  animation-delay: 2s;
+}
+
+.results-header, .one-contest-description, .cat {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+
+@keyframes flip-down {
+  0% {
+    transform: perspective( 350px ) rotateX( -90deg);
+  }
+  100% {
+    transform-origin: 50% 0%;
+    transform: perspective( 350px ) rotateX( 0deg );
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100$ {
+    opacity: 1;
+  }
 }
