@@ -1,5 +1,5 @@
 // MODULE
-var myApp = angular.module('myApp', ['ngResource', 'ngRoute']);
+var myApp = angular.module('myApp', ['ngResource', 'ngRoute', 'ngAnimate']);
 
 // SERVICES
 myApp.service('contestURLService', ['$resource', function($resource) {
@@ -32,7 +32,7 @@ myApp.config(function($routeProvider) {
 
 // CONTROLLER
 myApp.controller('GreetingController', 
-    ['$scope', 'contestURLService', function ($scope, contestURLService) {
+    ['$scope', '$animate', 'contestURLService', function ($scope, $animate, contestURLService) {
   $scope.fullList = contestURLService.GetAllContests();
   $scope.convertToDate = function(dt) {
     return new Date(dt);
@@ -40,10 +40,9 @@ myApp.controller('GreetingController',
 }]);
 
 myApp.controller('ContestsController', 
-    ['$scope', '$routeParams', 'contestURLService', 
-      function($scope, $routeParams, contestURLService) {
+    ['$scope', '$routeParams', '$animate', 'contestURLService', 
+      function($scope, $routeParams, $animate, contestURLService) {
         $scope.contestId = $routeParams.id || '0';
-        $scope.sayIt = "hoowah!";
         $scope.oneContest = contestURLService.GetOneContest($scope.contestId);
         $scope.convertToDate = function(dt) {
           return new Date(dt);
