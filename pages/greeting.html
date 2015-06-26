@@ -1,20 +1,23 @@
 <h2>Latest Contests:</h2>
 <div ng-hide="fullList.$resolved" class="spinner"></div>
-<div ng-hide="fullList.$resolved" class="loading-area">Loading...</div>
+<div ng-hide="fullList.$resolved" loading-text class="loading-area"></div>
 <div class="row one-row" ng-repeat="contest in fullList.contests">
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">
-            {{ convertToDate(contest.contest_occurrence) | date: 'MMMM d, yyyy' }}
-          </h2>
-        </div>
-        <div class="panel-body">
-          {{ contest.name }}<br>
-          {{ contest.location }}<br>
-          {{ contest.description }}<br>
-          <span class="click-thru"><a href="#/contests/{{ contest.id }}">Click to see contest results!</a>
-        </div>
+  <div class="col-md-12">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          {{ convertToDate(contest.contest_occurrence) | date: 'MMMM d, yyyy' }}
+        </h2>
       </div>
-    </div>
-  </div>
+
+      <div class="panel-body">
+        {{ contest.name }}<br>
+        {{ contest.location }}<br>
+        {{ contest.description }}<br>
+        <span class="click-thru"><a href="#/contests/{{ contest.id }}">Click to see contest results!</a>
+      </div><!-- panel-body --> 
+
+    </div><!-- panel panel-default --> 
+  </div><!-- col-md-12 --> 
+</div><!-- row one-row --> 
